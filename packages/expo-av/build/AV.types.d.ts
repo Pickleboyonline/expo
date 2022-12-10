@@ -49,7 +49,7 @@ export declare type AVPlaybackSourceObject = {
      * An optional headers object passed in a network request.
      */
     headers?: Record<string, string>;
-};
+} & AndroidBufferConfig;
 /**
  * @hidden
  */
@@ -241,6 +241,24 @@ export declare type AVPlaybackStatusToSet = {
      * iOS time pitch algorithm setting. See `setRateAsync` for details.
      */
     pitchCorrectionQuality?: PitchCorrectionQuality;
+};
+export declare type AndroidBufferConfig = {
+    /**
+     * Android Defaults to 15000
+     */
+    minBufferMs?: number;
+    /**
+     * Android Defaults to 50000
+     */
+    maxBufferMs?: number;
+    /**
+     * Android Defaults to 2500
+     */
+    bufferForPlaybackMs?: number;
+    /**
+     * Android Defaults to 5000
+     */
+    bufferForPlaybackAfterRebufferMs?: number;
 };
 export declare type AVPlaybackTolerance = {
     toleranceMillisBefore?: number;
